@@ -1,34 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Jurnal Cantik 💖</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Journal App 💖</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- font lucu -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-  <h1>Jurnal Harian 💕</h1>
+  <h1>My Journal App 💖</h1>
+  
+  <!-- Chibi -->
+  <img src="https://i.imgur.com/9Qh6G7R.png" id="chibi" alt="Chibi Image">
+  <!-- Balon teks chibi -->
+  <div id="chibiBubble" style="
+      display:none;
+      position:absolute;
+      background:#fff;
+      border:1px solid #ccc;
+      border-radius:10px;
+      padding:8px 12px;
+      max-width:200px;
+      font-size:14px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  ">Halo! Aku chibi-mu 💖</div>
 
-  <textarea id="note" placeholder="Tulis harimu di sini..."></textarea>
-  <button onclick="addNote()">Simpan ✨</button>
+  <!-- NAVIGASI -->
+  <nav class="nav">
+    <button type="button" onclick="showPage('journal')">Jurnal 📝</button>
+    <button type="button" onclick="showPage('planner')">Planner 📅</button>
+  </nav>
 
-  <ul id="list"></ul>
+  <!-- HALAMAN JURNAL -->
+  <section id="journalPage" class="page">
+    <textarea id="note" placeholder="Tulis harimu..." rows="5"></textarea>
+    <button type="button" onclick="addNote()">Simpan</button>
+    <ul id="list"></ul>
+  </section>
+
+  <!-- HALAMAN PLANNER -->
+  <section id="plannerPage" class="page" style="display:none;">
+    <input type="date" id="planDate">
+    <textarea id="planText" placeholder="Tulis rencana..." rows="5"></textarea>
+    <button type="button" onclick="addPlan()">Tambah</button>
+    <ul id="planList"></ul>
+  </section>
+
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-<hr>
-
-<div class="planner-section">
-  <h2>Rencana Harian 📅</h2>
-
-  <input type="date" id="planDate">
-  <textarea id="planText" placeholder="Apa rencanamu hari ini?"></textarea>
-  <button onclick="addPlan()">Tambah ✨</button>
-
-  <ul id="planList"></ul>
-</div>
