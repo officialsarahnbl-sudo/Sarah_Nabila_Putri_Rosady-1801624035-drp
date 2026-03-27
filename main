@@ -1,0 +1,4 @@
+git clone <repository> -> cloning dari remote server ke komputer 
+ls -> melihat daftar file dan folder
+git status -> melihat perubahan file yang telah dilakukan, untuk memastikan hanya perubahan tertentu saja yang di upload
+git add <file yang akan ditambahkan dalam perubahan> -> menambahkan file yang akan dicommit (commit = komitmen) 
