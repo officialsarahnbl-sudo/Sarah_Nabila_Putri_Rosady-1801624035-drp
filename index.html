@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Journal App 💖</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- FONT -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    .container {
+      position: relative;
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    textarea,
+    input[type="date"] {
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 8px 0;
+      padding: 8px;
+      background: #f0f0f0;
+      border-radius: 5px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>My Journal App 💖</h1>
+
+    <!-- DARK MODE -->
+    <button
+      type="button"
+      onclick="toggleTheme()"
+      id="themeBtn"
+    >
+      🌙 Dark Mode
+    </button>
+
+    <!-- CHIBI CONTAINER -->
+    <div id="chibiContainer">
+
+      <!-- BUBBLE -->
+      <div id="chibiBubble"></div>
+
+      <!-- CHIBI -->
+      <img
+        src="https://png.pngtree.com/png-clipart/20250518/original/pngtree-cute-chibi-anime-girl-with-pastel-blue-hair-holding-a-heart-png-image_21026631.png"
+        id="chibi"
+        alt="Chibi Image"
+      >
+
+    </div>
+
+<!-- WALLPAPER -->
+<input
+  type="file"
+  id="wallpaperInput"
+  accept="image/*"
+>
+    <!-- NAV -->
+    <nav class="nav">
+
+      <button
+        type="button"
+        onclick="showPage('journal')"
+      >
+        Jurnal 📝
+      </button>
+
+      <button
+        type="button"
+        onclick="showPage('planner')"
+      >
+        Planner 📅
+      </button>
+
+    </nav>
+
+    <!-- JOURNAL -->
+    <section id="journalPage">
+<div class="moodPicker">
+
+  <span onclick="setMood('😊')">😊</span>
+  <span onclick="setMood('😍')">😍</span>
+  <span onclick="setMood('😢')">😢</span>
+  <span onclick="setMood('😡')">😡</span>
+  <span onclick="setMood('😴')">😴</span>
+
+</div>
+
+<p id="selectedMood">
+  Mood: 😊
+</p>
+      <textarea
+        id="note"
+        placeholder="Tulis harimu..."
+        rows="5"
+      ></textarea>
+
+      <button
+        type="button"
+        onclick="addNote()"
+      >
+        Simpan
+      </button>
+
+      <ul id="list"></ul>
+
+    </section>
+
+    <!-- PLANNER -->
+    <section
+      id="plannerPage"
+      style="display:none;"
+    >
+
+      <input
+        type="date"
+        id="planDate"
+      >
+
+      <textarea
+        id="planText"
+        placeholder="Tulis rencana..."
+        rows="5"
+      ></textarea>
+
+      <button
+        type="button"
+        onclick="addPlan()"
+      >
+        Tambah
+      </button>
+
+      <ul id="planList"></ul>
+
+    </section>
+
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
