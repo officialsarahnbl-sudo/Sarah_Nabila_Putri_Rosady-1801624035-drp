@@ -1,8 +1,18 @@
+print("======================================")
+print("   ♟️ MANAJEMEN AKTIVITAS HARIAN ♟️")
+print("======================================")
+
+nama_user = input("Masukkan nama pengguna : ")
+
+print(f"\nHalo, {nama_user}! 👋")
+print("Selamat datang di sistem aktivitas catur.")
+print("Status Sistem : AKTIF ✅")
+
 #============================
 # Arahan 1 - Layout Catur
 #============================
 
-print("===⬛⬜ LAYOUT PAPAN CATUR ⬛⬜===")
+print("\n===⬛⬜ LAYOUT PAPAN CATUR ⬛⬜===")
 
 ukuran = 10
 
@@ -30,9 +40,9 @@ for i in range(jumlah_aktivitas):
 
     print(f"\nAktivitas ke-{i+1}")
 
-    aktivitas = input("Nama aktivitas      :")
-    waktu = input("Waktu aktivitas dilaksanakan      :")
-    prioritas = input("Tingkat prioritas dilakukan (Rendah/Sedang/Tinggi)  :")
+    aktivitas = input("Nama aktivitas      : ")
+    waktu = input("Waktu aktivitas dilaksanakan      : ")
+    prioritas = input("Tingkat prioritas dilakukan (Rendah/Sedang/Tinggi)  : ")
 
     data = {
         "aktivitas": aktivitas,
@@ -55,4 +65,5 @@ Prioritas       : {item ['prioritas']}
 """)
 
 print("Total aktivitas :", len(daftar_aktivitas))
-print("Program anda telah siap.")
+print(f"Terima kasih telah menggunakan sistem ini, {nama_user}! ✨")
+print("Program selesai dijalankan ✅")
