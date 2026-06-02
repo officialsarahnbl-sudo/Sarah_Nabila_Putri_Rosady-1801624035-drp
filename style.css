@@ -4,12 +4,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   height: 100vh;
+=======
+  min-height: 100vh;
+>>>>>>> 19fe7788a1e2de97cc3cf501366e785797a2c144
 }
 
 /* container utama */
 .container {
+<<<<<<< HEAD
   background: white;
+=======
+  background: rgb(22, 21, 21);
+>>>>>>> 19fe7788a1e2de97cc3cf501366e785797a2c144
   padding: 25px;
   border-radius: 15px;
   width: 350px;
@@ -273,6 +281,7 @@ li button:hover {
   transform: scale(1.05);
   background: #f3e8ff;
 }
+<<<<<<< HEAD
 #chibi {
   position: fixed;
   bottom: 20px;
@@ -282,19 +291,358 @@ li button:hover {
 }
 
 /* animasi naik turun lucu */
+=======
+/* CHIBI */
+/* WRAPPER */
+#chibiContainer {
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+
+  z-index: 999;
+}
+
+/* CHIBI */
+#chibi {
+  width: 90px;
+
+  animation: floaty 2s infinite ease-in-out;
+}
+
+/* ANIMASI */
+>>>>>>> 19fe7788a1e2de97cc3cf501366e785797a2c144
 @keyframes floaty {
   0% {
     transform: translateY(0);
   }
+<<<<<<< HEAD
   50% {
     transform: translateY(-10px);
   }
+=======
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+>>>>>>> 19fe7788a1e2de97cc3cf501366e785797a2c144
   100% {
     transform: translateY(0);
   }
 }
 
+<<<<<<< HEAD
 /* kalau di-hover makin gemes */
 #chibi:hover {
   transform: scale(1.1);
 }
+=======
+/* BUBBLE */
+#chibiBubble {
+
+  position: absolute;
+
+  /* POSISI RELATIF KE CHIBI */
+  bottom: 70px;
+  right: 40px;
+
+  background: white;
+
+  border: 3px solid #f5a3b7;
+
+  padding: 10px 16px;
+
+  border-radius: 30px;
+
+  font-weight: bold;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  display: none;
+
+  white-space: nowrap;
+
+  animation: bubblePop 0.25s ease;
+}
+
+/* buntut bubble */
+#chibiBubble::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -10px;
+  right: 20px;
+
+  width: 18px;
+  height: 18px;
+
+  background: white;
+
+  border-right: 3px solid #f5a3b7;
+  border-bottom: 3px solid #f5a3b7;
+
+  transform: rotate(45deg);
+}
+
+/* animasi bubble */
+@keyframes bubblePop {
+
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* DARK MODE */
+
+.dark {
+  background: linear-gradient(135deg, #1f1f2e, #2b2b45);
+}
+
+.dark .container {
+  background: #2f2f4a;
+  color: white;
+}
+
+.dark textarea,
+.dark input[type="date"] {
+  background: #444;
+  color: white;
+  border: none;
+}
+
+.dark li {
+  background: #3b3b5a;
+  color: white;
+}
+/* DARK MODE FIX */
+
+.dark textarea {
+  background: #444;
+  color: white;
+}
+
+.dark textarea::placeholder {
+  color: #d8d8d8;
+}
+
+.dark #chibiBubble {
+  background: #ffffff;
+  color: #333;
+}
+
+.dark ul li {
+  color: white;
+}
+
+.dark input[type="date"] {
+  background: #444;
+  color: white;
+}
+.dark .nav {
+  background: #3b3b5a;
+}
+
+.dark .nav button.active {
+  background: #6a5acd;
+  color: white;
+}
+/* TEXT NOTE DARK MODE */
+
+.dark li {
+  color: white;
+}
+
+/* planner text */
+.dark #planList li {
+  background: #4a4a6a;
+  color: white;
+}
+
+/* journal text */
+.dark #list li {
+  background: #4a4a6a;
+  color: white;
+}
+
+/* tanggal planner */
+.dark strong {
+  color: #ffb6ff;
+}
+/* NOTE CARD */
+
+.noteCard {
+  width: 100%;
+}
+
+/* atas */
+.noteTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+/* tanggal */
+.noteDate {
+  font-size: 13px;
+  font-weight: bold;
+  color: #6a5acd;
+}
+
+/* isi note */
+.noteText {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: #333;
+}
+
+/* tombol hapus */
+.deleteBtn {
+  background: #ff6b6b;
+
+  border: none;
+
+  padding: 6px 12px;
+
+  border-radius: 10px;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+/* DARK MODE */
+
+.dark .noteText {
+  color: white;
+}
+
+.dark .noteDate {
+  color: #ffc8ff;
+}
+/* MOOD PICKER */
+
+.moodPicker {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 10px;
+}
+
+.moodPicker span {
+
+  font-size: 28px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.moodPicker span:hover {
+  transform: scale(1.2);
+}
+
+#selectedMood {
+  text-align: center;
+
+  font-weight: bold;
+
+  color: #6a5acd;
+}
+
+/* mood di note */
+
+.noteMood {
+  font-size: 28px;
+
+  margin-bottom: 10px;
+}
+#wallpaperInput {
+
+  margin-bottom: 15px;
+
+  width: 100%;
+
+  background: white;
+
+  padding: 10px;
+
+  border-radius: 12px;
+
+}
+/* WALLPAPER INPUT */
+
+#wallpaperInput {
+
+  width: 100%;
+
+  padding: 10px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.9);
+
+  color: #333;
+
+  border: none;
+
+  margin-bottom: 15px;
+
+  font-family: 'Poppins', sans-serif;
+
+  box-sizing: border-box;
+}
+
+/* tombol pilih file */
+
+#wallpaperInput::file-selector-button {
+
+  background: #6a5acd;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  margin-right: 10px;
+
+  transition: 0.3s;
+}
+
+#wallpaperInput::file-selector-button:hover {
+
+  background: #5845c0;
+
+}
+
+/* DARK MODE */
+
+.dark #wallpaperInput {
+
+  background: #3b3b5a;
+
+  color: white;
+
+  border: 1px solid #555;
+
+}
+>>>>>>> 19fe7788a1e2de97cc3cf501366e785797a2c144
