@@ -6,5 +6,20 @@ print ("4. Tanggal, tempat, tahun lahir")
 print ("5. Sign in")
 
 #Tampilan menu utama
+print ("1. Current Level")
+print ("2. XP Saat ini")
+print ("3. Profil")
+print ("4. Kalendar")
+print ("5. Level 1")
+print ("6. Level 2")
+print ("7. Level 3")
+print ("8. Level 4")
+print ("9. Level 5")
+print ("10. Level 6")
+print ("11. Level 7")
+print ("12. Level 8")
+print ("13. Level 9")
+print ("14. Level 10")
+print ("15. Surprise User")
 
 #Tampilan di dalam misi
