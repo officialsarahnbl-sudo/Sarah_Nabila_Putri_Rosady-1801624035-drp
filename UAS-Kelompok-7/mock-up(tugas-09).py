@@ -1,9 +1,9 @@
 #Tampilan registrasi
-1. Tempat input gmail
-2. Tempat input username
-3. Password
-4. Tanggal, tempat, tahun lahir
-5. Sign in
+print ("1. Tempat input gmail")
+print ("2. Tempat input username")
+print ("3. Password")
+print ("4. Tanggal, tempat, tahun lahir")
+print ("5. Sign in")
 
 #Tampilan menu utama
 
