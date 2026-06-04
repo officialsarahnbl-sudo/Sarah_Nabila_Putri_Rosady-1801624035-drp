@@ -1,7 +1,0 @@
-print ("==================================")
-print ("💌 INPUT GMAIL")
-print ("📝 INPUT USERNAME")
-print ("🔐 INPUT PASSWORD")
-print ("📅 TANGGAL, TEMPAT, TAHUN LAHIR")
-print ("🙋‍♀️ SIGN IN")
-print ("==================================")

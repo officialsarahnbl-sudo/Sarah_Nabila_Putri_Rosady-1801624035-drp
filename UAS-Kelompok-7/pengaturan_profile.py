@@ -1,5 +1,4 @@
-def your_profile():
-    global user_login, users
+def your_profile(user_login, users):
 
     while True:
         print("\n=== PROFIL ===")
