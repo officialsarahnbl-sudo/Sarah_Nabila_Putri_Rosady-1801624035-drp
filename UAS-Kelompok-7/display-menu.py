@@ -32,7 +32,6 @@ def display_menu():
 def skema_misi():
     daftar_misi = []
     jumlah_misi = int(input("Masukkan jumlah target misi yang mau dijalani hari ini, berupa angka: "))
-    user = input("Masukkan nama kamu: ")
     datetime.now()
     for i in range (jumlah_misi):
         print()
@@ -40,15 +39,15 @@ def skema_misi():
 
     nama_misi = input("Misi yang ingin kamu jalani hari ini: ")
 
-    kegiatan= {
-        "kegiatan": nama_misi
+    nama_misi= {
+        "misi": nama_misi
     }
-    daftar_misi.append(kegiatan)
+    daftar_misi.append(nama_misi)
     print()
 
     print(f"\nSKEMA MISI YANG SUDAH {user} INPUT")
 
     for i in range(len(daftar_misi)):
         print(f"Misi {i + 1}")
-        print(f"Nama Misi       : {daftar_misi[i]['kegiatan']}")
+        print(f"Nama Misi       : {daftar_misi[i]['misi']}")
         print()
