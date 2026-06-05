@@ -1,4 +1,3 @@
-from tampilan_registrasi import sign_in, sigm_up
 from pengaturan_profile import your_profile
 from tampilan_level import lihat_xp, lihat_level
 from datetime import datetime
