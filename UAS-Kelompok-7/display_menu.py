@@ -32,34 +32,3 @@ def display_menu(username):
         else:
             print("Pilihan tidak valid")
 
-def skema_misi(username):
-
-    daftar_misi = []
-
-    print("\n=== MISSION LEVEL 1 ===")
-    print("1. Minum air mineral 1L (+10 XP)")
-    print("2. Memberikan afirmasi positif (+5 XP)")
-    print("3. Jalan kaki 1000 langkah (+15 XP)")
-
-    misi = input("Pilih misi yang berhasil diselesaikan: ")
-
-    if misi == "1":
-        nama_misi = "Minum air mineral 1L"
-        tambah_xp(10)
-
-    elif misi == "2":
-        nama_misi = "Memberikan afirmasi positif"
-        tambah_xp(5)
-
-    elif misi == "3":
-        nama_misi = "Jalan kaki 1000 langkah"
-        tambah_xp(15)
-
-    else:
-        print("Misi tidak tersedia.")
-        return
-
-    daftar_misi.append({"misi": nama_misi})
-
-    print(f"\nSKEMA MISI YANG SUDAH {username} INPUT")
-    print(f"Nama Misi : {nama_misi}")
