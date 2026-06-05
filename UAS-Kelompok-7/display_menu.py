@@ -33,7 +33,7 @@ def display_menu(username):
         elif pilihan == "3":
             lihat_xp()
         elif pilihan == "4":
-            target_harian()
+            target_harian.target_harian(username)
         elif pilihan == "5":
             our_mission()
         elif pilihan == "6":    
