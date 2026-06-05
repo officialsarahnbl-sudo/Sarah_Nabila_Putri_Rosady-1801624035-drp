@@ -25,7 +25,7 @@ def sign_in():
     if username in users and users[username]["password"] == password:
         print("Sign in berhasil!")
         return username
-
-    print("Username atau password salah!")
+    else:
+        print("Username atau password salah!")
     return None
     
