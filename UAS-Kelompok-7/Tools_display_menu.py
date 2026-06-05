@@ -12,36 +12,36 @@ def display_menu(username, users):
     print(f"\nSelamat datang, {username}")
     print(f"Waktu saat ini: {hari_ini}")
 
-    while True:
-        print("\n=== Menu ===")
-        print("1. Your Profile")
-        print("2. Lihat Level")
-        print("3. XP")
-        print("4. Ayo isi targetmu hari ini‼")
-        print("5. Our Mission")
-        print("6. Logout")
 
-        pilihan = input("Pilih dengan ketikan angka: ").strip()
-        print("DEBUG =", repr(pilihan))
+    print("\n=== Menu ===")
+    print("1. Your Profile")
+    print("2. Lihat Level")
+    print("3. XP")
+    print("4. Ayo isi targetmu hari ini‼")
+    print("5. Our Mission")
+    print("6. Logout")
 
-        if pilihan == "1":
+    pilihan = input("Pilih dengan ketikan angka: ").strip()
+    print("DEBUG =", repr(pilihan))
+
+    if pilihan == "1":
             your_profile(username, users)
 
-            elif pilihan == "2":
+    elif pilihan == "2":
                 lihat_level()
 
-            elif pilihan == "3":
+    elif pilihan == "3":
                 lihat_xp()
 
-            elif pilihan == "4":
-                target_harian.target_harian(username)
+    elif pilihan == "4":
+             target_harian.target_harian(username)
 
-            elif pilihan == "5":
+    elif pilihan == "5":
                 our_mission()
 
-            elif pilihan == "6":
+    elif pilihan == "6":
                 print("MASUK KE PILIHAN 6")
                 return
 
-            else:
+    else:
                 print("Pilihan tidak valid")
