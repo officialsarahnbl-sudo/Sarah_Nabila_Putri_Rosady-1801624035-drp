@@ -9,14 +9,7 @@ def sign_up():
     if username in users:
         print("Username sudah ada!")
         return
-
-    users[username] = {
-        "password": password,
-        "bio": "",
-        "tanggal_lahir": ""
-    }
-
-    print("Pendaftaran berhasil! Silakan sign in untuk melanjutkan.")
+    print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan.")
 
 def sign_in():
     print("\n=== Sign In ===")
