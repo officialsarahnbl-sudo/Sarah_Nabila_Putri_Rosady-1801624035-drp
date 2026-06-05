@@ -21,8 +21,6 @@ def display_menu(username, users):
     print("6. Logout")
 
     pilihan = input("Pilih dengan ketikan angka: ").strip()
-    print("DEBUG =", repr(pilihan))
-
     if pilihan == "1":
             your_profile(username, users)
 
