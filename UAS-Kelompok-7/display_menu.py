@@ -6,7 +6,7 @@ from pengaturan_profile import your_profile
 from tampilan_level import lihat_xp, lihat_level
 from tampilan_level import tambah_xp
 from datetime import datetime
-
+from our_mission import mission as our_mission
 import target_harian
 
 hari_ini = datetime.now().strftime("%d %B %Y")
