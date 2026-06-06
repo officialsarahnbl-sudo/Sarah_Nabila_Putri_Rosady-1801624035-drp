@@ -29,3 +29,19 @@ def sign_in():
         print("Username atau password salah!")
     return None
     
+def regist():
+    if pilihan == "1":
+        sign_up()
+
+    elif pilihan == "2":
+        username = sign_in()
+
+        if username:
+            display_menu(username, users)
+
+    elif pilihan == "3":
+        print("Terima kasih telah menggunakan Miss Me 📑")
+        exit()
+
+    else:
+        print("Pilihan tidak valid ❌")

@@ -1,4 +1,4 @@
-from tampilan_registrasi import sign_up, sign_in, menu_registrasi
+from tampilan_registrasi import sign_up, sign_in, regist
 from pengaturan_profile import your_profile
 from tampilan_level import lihat_xp, lihat_level
 from tampilan_level import tambah_xp
