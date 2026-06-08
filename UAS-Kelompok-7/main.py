@@ -12,5 +12,8 @@ def header():
 def main():
     header()
 
+    while True:
+        regist()
+
 if __name__ == "__main__":
     main()
