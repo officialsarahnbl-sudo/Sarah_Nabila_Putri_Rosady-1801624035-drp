@@ -6,3 +6,6 @@
 # 3. Masukkan Password
 # 4. Masukkan Hari/Tanggal Lahir (Pakai Datetime)
 # Terimakasih sudah login
+
+current_xp = 0
+current_level = 1
