@@ -7,7 +7,6 @@ import target_harian
 hari_ini = datetime.now().strftime("%d %B %Y")
 
 def display_menu(username, users):
-
     print(f"\nSelamat datang, {username}")
     print(f"Waktu saat ini: {hari_ini}")
 
@@ -34,7 +33,7 @@ def display_menu(username, users):
              target_harian.target_harian(username)
 
     elif pilihan == "5":
-                our_mission()
+                our_mission(username, users)
 
     elif pilihan == "6":
                 print("MASUK KE PILIHAN 6")
