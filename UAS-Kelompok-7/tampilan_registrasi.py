@@ -1,5 +1,4 @@
 from Tools_display_menu import display_menu
-from Tools_display_menu import display_menu
 
 users = {}
 

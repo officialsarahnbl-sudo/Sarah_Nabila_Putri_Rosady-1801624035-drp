@@ -14,3 +14,5 @@ def tambah_xp(jumlah_xp):
 
     if current_xp >= 30:
         current_level = 2
+    elif current_xp >= 42:
+        current_level = 3
