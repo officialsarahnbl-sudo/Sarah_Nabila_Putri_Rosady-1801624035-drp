@@ -34,8 +34,9 @@ def display_menu(username, users):
             target_harian.target_harian(username)
 
         elif pilihan == "5":
+                our_mission(username, users)
+        elif pilihan == "5":
             our_mission(username)
-
         elif pilihan == "6":
             print("Logout berhasil!")
             raise SystemExit()

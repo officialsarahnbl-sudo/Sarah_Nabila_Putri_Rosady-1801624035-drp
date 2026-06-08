@@ -1,4 +1,6 @@
 def target_harian(username):
+    from Tools_display_menu import display_menu
+    display_menu()
     print(f"Halo, {username}! Kamu bisa tuangkan di sini kamu mau menjalani target apa hari ini. Kami harap, kamu bisa menjalankannya. Jika tidak, jangan menyerah! Karena apa yang kamu lakukan tidak pernah sia-sia.")
     targets = []
     jumlah_target = int(input("Masukkan jumlah kegiatan yang mau dijalani hari ini, berupa angka: "))
@@ -28,6 +30,7 @@ def target_harian(username):
         print("Jangan menyerah, coba lagi besok‼")
 
     input("\nTekan Enter untuk kembali ke menu...")
+    return
 
 
 # Blok ini hanya berjalan ketika file ini dijalankan langsung.
