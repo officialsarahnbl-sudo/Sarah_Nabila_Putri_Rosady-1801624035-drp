@@ -1,6 +1,8 @@
 from Tools_display_menu import display_menu
+from database import load_users
 
 users = {}
+users = load_users()
 
 def sign_up():
     username = input("Username: ").strip()

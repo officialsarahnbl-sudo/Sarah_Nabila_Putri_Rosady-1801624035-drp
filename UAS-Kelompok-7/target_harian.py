@@ -1,6 +1,7 @@
-def target_harian(username):
+def target_harian(username, users):
     from Tools_display_menu import display_menu
-    display_menu()
+   
+    display_menu(username, users)
     print(f"Halo, {username}! Kamu bisa tuangkan di sini kamu mau menjalani target apa hari ini. Kami harap, kamu bisa menjalankannya. Jika tidak, jangan menyerah! Karena apa yang kamu lakukan tidak pernah sia-sia.")
     targets = []
     jumlah_target = int(input("Masukkan jumlah kegiatan yang mau dijalani hari ini, berupa angka: "))
@@ -36,4 +37,4 @@ def target_harian(username):
 # Blok ini hanya berjalan ketika file ini dijalankan langsung.
 # Saat file di-import dari modul lain, fungsi hanya dijalankan ketika dipanggil.
 if __name__ == "__main__":
-    target_harian("User")
+    target_harian("User", [])

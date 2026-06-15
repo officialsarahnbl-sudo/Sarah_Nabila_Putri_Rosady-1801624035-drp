@@ -28,18 +28,16 @@ def display_menu(username, users):
             lihat_level()
 
         elif pilihan == "3":
-            lihat_xp()
+            lihat_xp(username, users)
 
         elif pilihan == "4":
-            target_harian.target_harian(username)
+            target_harian.target_harian(username, users)
 
         elif pilihan == "5":
-                our_mission(username, users)
-        elif pilihan == "5":
-            our_mission(username)
+            our_mission(username, users)
         elif pilihan == "6":
             print("Logout berhasil!")
-            raise SystemExit()
+            return
 
         else:
             print("Pilihan tidak valid")
