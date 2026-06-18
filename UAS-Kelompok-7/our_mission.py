@@ -25,18 +25,17 @@ def level_1(username, users):
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
-    if jawaban == "ya":
-        if "xp" not in users[username]:
-            users[username]["xp"] = 0
-        total_xp = sum(t["xp"] for t in misi)
-        users[username]["xp"] += total_xp
+    from tampilan_level import tambah_xp
 
-        print(f"Selamat! Kamu mendapatkan {total_xp} XP. Total XP kamu sekarang: {users[username]['xp']}")
+    if jawaban == "ya":
+        total_xp = sum(t["xp"] for t in misi)
+        tambah_xp(username, users, total_xp)
+
     else:
         if "xp" not in users[username]:
             users[username]["xp"] = 0
-        # no XP awarded
-        print(f"Sayang sekali, kamu tidak mendapatkan XP. Total XP kamu tetap: {users[username]['xp']}. Ayo berusaha lagi, ganbatte!")
+
+    print(f"Sayang sekali, kamu tidak mendapatkan XP. Total XP kamu tetap: {users[username]['xp']}. Ayo berusaha lagi, ganbatte!")
 
 
 def level_2(username, users):
@@ -57,16 +56,19 @@ def level_2(username, users):
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
-    if jawaban == "ya":
-        if "xp" not in users[username]:
-            users[username]["xp"] = 0
-        total_xp = sum(t["xp"] for t in misi)
-        users[username]["xp"] += total_xp
+    from tampilan_level import tambah_xp
 
-        print(f"Selamat! Kamu mendapatkan {total_xp} XP. Total XP kamu sekarang: {users[username]['xp']}")
+    if jawaban.lower() in ["ya", "y"]:
+        total_xp = sum(t["xp"] for t in misi)
+        tambah_xp(username, users, total_xp)
+
     else:
         if "xp" not in users[username]:
             users[username]["xp"] = 0
-        print(f"Sayang sekali, kamu tidak mendapatkan XP. Total XP kamu tetap: {users[username]['xp']}. Ayo berusaha lagi, ganbatte!")
 
+        print(
+        f"Sayang sekali, kamu tidak mendapatkan XP. "
+        f"Total XP kamu tetap: {users[username]['xp']}. "
+        f"Ayo berusaha lagi, ganbatte!"
+    )
 

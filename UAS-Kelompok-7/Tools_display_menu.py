@@ -25,7 +25,7 @@ def display_menu(username, users):
             your_profile(username, users)
 
         elif pilihan == "2":
-            lihat_level()
+            lihat_level(username, users)
 
         elif pilihan == "3":
             lihat_xp(username, users)
@@ -40,6 +40,7 @@ def display_menu(username, users):
     
         elif pilihan == "5":
             our_mission(username, users)
+            
         elif pilihan == "6":
             print("Logout berhasil!")
             return
