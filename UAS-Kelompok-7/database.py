@@ -1,7 +1,7 @@
 import json
 import os
 
-FILE_DB = "users.json"
+FILE_DB = os.path.join(os.path.dirname(__file__), "users.json")
 
 def load_users():
     if not os.path.exists(FILE_DB):

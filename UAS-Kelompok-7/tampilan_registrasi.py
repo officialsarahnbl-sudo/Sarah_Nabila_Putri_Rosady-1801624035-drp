@@ -1,5 +1,5 @@
 from Tools_display_menu import display_menu 
-from database import load_users 
+from database import load_users, save_users 
 
 users = {} 
 users = load_users() 
@@ -16,6 +16,7 @@ def sign_up():
         "tanggal_lahir": "" }
     
     print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan.") 
+    save_users(users)
     
 def sign_in(): 
     print("\n=== Sign In ===") 
