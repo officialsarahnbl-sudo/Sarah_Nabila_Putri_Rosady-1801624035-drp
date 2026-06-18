@@ -31,8 +31,13 @@ def display_menu(username, users):
             lihat_xp(username, users)
 
         elif pilihan == "4":
+            print("TES MENU 4")
+            print("SEBELUM FUNGSI")
+
             target_harian.target_harian(username, users)
 
+            print("SETELAH FUNGSI")
+    
         elif pilihan == "5":
             our_mission(username, users)
         elif pilihan == "6":
