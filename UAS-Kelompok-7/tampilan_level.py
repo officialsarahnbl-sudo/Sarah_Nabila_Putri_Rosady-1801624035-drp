@@ -14,13 +14,14 @@ def tambah_xp(username, users, jumlah_xp):
 
     users[username]["xp"] = users[username].get("xp", 0) + jumlah_xp
 
-    xp = users[username]["xp"]
-
+    xp = users[username].get("xp", 0)
     level_baru = (xp // 42) + 1
+
+# Batasi maksimal naik satu level
+    if level_baru > level_lama + 1:
+        level_baru = level_lama + 1
 
     if level_baru > level_lama:
         print(f"🎉 Selamat! Kamu naik ke Level {level_baru}!")
 
     users[username]["level"] = level_baru
-
-    save_users(users)

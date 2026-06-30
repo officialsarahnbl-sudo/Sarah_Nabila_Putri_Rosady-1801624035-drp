@@ -3,11 +3,20 @@ def mission(username, users):
         print(f"Kamu memilih level {Pilihan_level}. Semangat menjalankan misinya, ganbatte!")
         print("1. Level 1")
         print("2. Level 2")
+        print("3. Level 3")
+        print("4. Level 4")
+        print("5. Level 5")
 
         if Pilihan_level == "1":
             level_1(username, users)
         elif Pilihan_level == "2": 
             level_2(username, users)
+        elif Pilihan_level == "3": 
+            level_3(username, users)
+        elif Pilihan_level == "4": 
+            level_4(username, users)
+        elif Pilihan_level == "5": 
+            level_5(username, users)
 
 def level_1(username, users):
     print("\n=== MISSION LEVEL 1===")
@@ -35,7 +44,7 @@ def level_1(username, users):
         if "xp" not in users[username]:
             users[username]["xp"] = 0
 
-    print(f"Sayang sekali, kamu tidak mendapatkan XP. Total XP kamu tetap: {users[username]['xp']}. Ayo berusaha lagi, ganbatte!")
+        print(f"Sayang sekali, kamu tidak mendapatkan XP. Total XP kamu tetap: {users[username]['xp']}. Ayo berusaha lagi, ganbatte!")
 
 
 def level_2(username, users):
