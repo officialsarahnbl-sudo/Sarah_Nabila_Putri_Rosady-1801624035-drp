@@ -3,7 +3,9 @@ CREATE TABLE IF NOT EXISTS users (
     username TEXT PRIMARY KEY,
     password TEXT NOT NULL,
     bio TEXT DEFAULT '',
-    tanggal_lahir TEXT DEFAULT ''
+    tanggal_lahir TEXT DEFAULT '',
+    lihat_xp TEXT PRIMARY KEY,
+    lihat_level TEXT PRIMARY KEY
 );
 
 -- Insert existing data from users.json
