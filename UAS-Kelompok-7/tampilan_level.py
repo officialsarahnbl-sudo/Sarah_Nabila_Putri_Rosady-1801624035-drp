@@ -28,3 +28,5 @@ def tambah_xp(username, users, jumlah_xp):
         print(f"🎉 Selamat! Kamu naik ke Level {level_baru}!")
 
     users[username]["level"] = level_baru
+    # Persist changes to database
+    save_users(users)

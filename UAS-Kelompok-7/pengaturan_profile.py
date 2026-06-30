@@ -1,3 +1,5 @@
+from database import save_users
+
 # READ / UPDATE
 def your_profile(user_login, users):
 
@@ -27,6 +29,7 @@ def your_profile(user_login, users):
                 user_login = username_baru
 
                 print("Username berhasil diubah!")
+                save_users(users)
 
         elif pilih == "2":
             password_lama = input("Password lama: ")
@@ -35,6 +38,7 @@ def your_profile(user_login, users):
                 password_baru = input("Password baru: ")
                 users[user_login]["password"] = password_baru
                 print("Password berhasil diubah!")
+                save_users(users)
             else:
                 print("Password lama salah!")
 
@@ -44,6 +48,7 @@ def your_profile(user_login, users):
             if len(bio_baru) <= 200:
                 users[user_login]["bio"] = bio_baru
                 print("Bio berhasil disimpan!")
+                save_users(users)
             else:
                 print("Bio terlalu panjang!")
 
@@ -51,6 +56,7 @@ def your_profile(user_login, users):
             tanggal = input("Masukkan tanggal lahir (DD/MM/YYYY): ")
             users[user_login]["tanggal_lahir"] = tanggal
             print("Tanggal lahir berhasil disimpan!")
+            save_users(users)
 
         elif pilih == "5":
             break
