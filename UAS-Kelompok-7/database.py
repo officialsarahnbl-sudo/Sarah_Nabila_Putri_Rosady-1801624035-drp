@@ -1,7 +1,4 @@
-import sqlite3
-import os
-
-DB_PATH = os.path.join(os.path.dirname(__file__), "users.db")
+B_PATH = os.path.join(os.path.dirname(_file_), "users.db")
 
 def init_database():
     """Initialize database with schema if not exists"""
@@ -78,3 +75,15 @@ def save_users(users):
         conn.commit()
     finally:
         conn.close()
+
+DB_PATH = os.path.join(os.path.dirname(_file_), "users.db")
+print(DB_PATH)
+import sqlite3
+
+conn = sqlite3.connect("users.db")
+cursor = conn.cursor()
+
+cursor.execute("PRAGMA table_info(users)")
+print(cursor.fetchall())
+
+conn.close()
