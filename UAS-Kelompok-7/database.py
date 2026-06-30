@@ -13,17 +13,26 @@ def init_database():
             username TEXT PRIMARY KEY,
             password TEXT NOT NULL,
             bio TEXT DEFAULT '',
-            tanggal_lahir TEXT DEFAULT ''
+            tanggal_lahir TEXT DEFAULT '',
+            xp INTEGER DEFAULT 0,
+            level INTEGER DEFAULT 1
         )
     """)
+    
+    cursor.execute("PRAGMA table_info(users)")
+    existing_columns = [row[1] for row in cursor.fetchall()]
+    if "xp" not in existing_columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN xp INTEGER DEFAULT 0")
+    if "level" not in existing_columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN level INTEGER DEFAULT 1")
     
     # Check if table is empty and insert default user if needed
     cursor.execute("SELECT COUNT(*) FROM users")
     if cursor.fetchone()[0] == 0:
         cursor.execute("""
-            INSERT INTO users (username, password, bio, tanggal_lahir)
-            VALUES (?, ?, ?, ?)
-        """, ('y', 'y', '', ''))
+            INSERT INTO users (username, password, bio, tanggal_lahir, xp, level)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, ('y', 'y', '', '', 0, 1))
     
     conn.commit()
     conn.close()
@@ -40,13 +49,15 @@ def load_users():
         cursor.execute("SELECT * FROM users")
         rows = cursor.fetchall()
         
-        # Convert to dict format: {username: {password, bio, tanggal_lahir}}
+        # Convert to dict format: {username: {password, bio, tanggal_lahir, xp, level}}
         users = {}
         for row in rows:
             users[row['username']] = {
                 'password': row['password'],
                 'bio': row['bio'],
-                'tanggal_lahir': row['tanggal_lahir']
+                'tanggal_lahir': row['tanggal_lahir'],
+                'xp': row['xp'] if row['xp'] is not None else 0,
+                'level': row['level'] if row['level'] is not None else 1
             }
         return users
     finally:
@@ -66,13 +77,15 @@ def save_users(users):
         # Insert new users
         for username, data in users.items():
             cursor.execute("""
-                INSERT INTO users (username, password, bio, tanggal_lahir)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO users (username, password, bio, tanggal_lahir, xp, level)
+                VALUES (?, ?, ?, ?, ?, ?)
             """, (
                 username,
                 data.get('password', ''),
                 data.get('bio', ''),
-                data.get('tanggal_lahir', '')
+                data.get('tanggal_lahir', ''),
+                data.get('xp', 0),
+                data.get('level', 1)
             ))
         
         conn.commit()
