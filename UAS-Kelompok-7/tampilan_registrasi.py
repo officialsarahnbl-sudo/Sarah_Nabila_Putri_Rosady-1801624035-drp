@@ -15,7 +15,7 @@ def sign_up():
         "password": password, "bio": "",
         "tanggal_lahir": "" }
     
-    print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan.") 
+    print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan ya.") 
     save_users(users)
     
 def sign_in(): 
