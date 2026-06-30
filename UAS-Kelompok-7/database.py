@@ -28,6 +28,7 @@ def init_database():
     conn.commit()
     conn.close()
 
+# READ
 def load_users():
     """Load all users from database and return as dict"""
     init_database()
@@ -51,6 +52,7 @@ def load_users():
     finally:
         conn.close()
 
+# CREATE / UPDATE
 def save_users(users):
     """Save users dict to database"""
     init_database()

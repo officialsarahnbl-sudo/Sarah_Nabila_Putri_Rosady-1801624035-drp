@@ -1,5 +1,6 @@
 print("FILE TARGET_HARIAN TERLOAD")
 
+# CREATE / UPDATE
 def target_harian(username, users):
 
     targets = []

@@ -3,6 +3,7 @@ from database import load_users, save_users
 
 users = {} 
 users = load_users() 
+# CREATE
 def sign_up(): 
     username = input("Username: ").strip() 
     password = input("Password: ").strip() 
@@ -18,6 +19,7 @@ def sign_up():
     print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan ya.") 
     save_users(users)
     
+# READ
 def sign_in(): 
     print("\n=== Sign In ===") 
     

@@ -1,13 +1,16 @@
 from database import save_users
 
+# READ
 def lihat_xp(username, users):
     xp = users[username].get("xp", 0)
     print(f"\nXP Saat Ini : {xp}")
 
+# READ
 def lihat_level(username, users):
     level = users[username].get("level", 1)
     print(f"\nLevel Saat Ini : {level}")
 
+# UPDATE
 def tambah_xp(username, users, jumlah_xp):
 
     level_lama = users[username].get("level", 1)
