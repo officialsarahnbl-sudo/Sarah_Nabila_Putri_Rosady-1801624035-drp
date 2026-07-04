@@ -2,11 +2,6 @@ def mission(username, users):
         print ("Maaf, untuk saat ini level hanya tersedia dari level 1 sampai level 5.")
         Pilihan_level = input("Level berapa kamu? (1-5): ")
         print(f"Kamu memilih level {Pilihan_level}. Semangat menjalankan misinya, ganbatte!")
-        print("1. Level 1")
-        print("2. Level 2")
-        print("3. Level 3")
-        print("4. Level 4")
-        print("5. Level 5")
 
         if Pilihan_level == "1":
             level_1(username, users)

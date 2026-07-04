@@ -1,54 +1,82 @@
-print("FILE TARGET_HARIAN TERLOAD")
+from datetime import datetime
+from database import save_users
 
-# CREATE / UPDATE
 def target_harian(username, users):
 
-    targets = []
+    tanggal = datetime.now().strftime("%d-%m-%Y")
 
-    print(f"Halo, {username}! Kamu bisa tuangkan di sini kamu mau menjalani target apa hari ini. Kami harap, kamu bisa menjalankannya. Jika tidak, jangan menyerah! Karena apa yang kamu lakukan tidak pernah sia-sia.")
+    # Buat tempat penyimpanan kalau belum ada
+    if "target_harian" not in users[username]:
+        users[username]["target_harian"] = {}
 
-    jumlah_target = int(input("Masukkan jumlah kegiatan yang mau dijalani hari ini, berupa angka: "))
+    # Buat list target untuk hari ini kalau belum ada
+    if tanggal not in users[username]["target_harian"]:
+        users[username]["target_harian"][tanggal] = []
 
-    for i in range(jumlah_target):
-        print(f"\nTarget ke-{i+1}")
+    targets = users[username]["target_harian"][tanggal]
 
-        nama_target = input("Kegiatan yang ditargetkan: ")
+    while True:
 
-        target = {
-            "Target": nama_target
-        }
+        print("\n===================================")
+        print("         TARGET HARIAN")
+        print("===================================")
+        print(f"Tanggal : {tanggal}\n")
 
-        targets.append(target)
+        print("Target yang sudah tersimpan:")
 
-    print("\nTARGET HARI INI")
-
-    for i in range(len(targets)):
-        print(f"KEGIATAN {i + 1}")
-        print(f"Target : {targets[i]['Target']}")
-        print()
-
-    # DELETE
-    hapus = input("Apakah ada target yang ingin dihapus? (ya/tidak): ")
-
-    if hapus.lower() == "ya":
-        nomor = int(input("Masukkan nomor target yang ingin dihapus: "))
-
-        if 1 <= nomor <= len(targets):
-            target_dihapus = targets.pop(nomor - 1)
-            print(f"Target '{target_dihapus['Target']}' berhasil dihapus.")
+        if len(targets) == 0:
+            print("Belum ada target hari ini.")
         else:
-            print("Nomor target tidak valid.")
+            for i, target in enumerate(targets, 1):
+                print(f"{i}. {target}")
 
-    print("\nTARGET TERBARU")
+        print("\nHalo,", username)
+        print("Apa yang ingin kamu lakukan hari ini?")
+        print("1. Tambah Target")
+        print("2. Hapus Target")
+        print("3. Kembali")
 
-    for i in range(len(targets)):
-        print(f"KEGIATAN {i + 1}")
-        print(f"Target : {targets[i]['Target']}")
-        print()
+        pilihan = input("Pilih menu: ")
 
-    input("\nTekan Enter untuk kembali ke menu...")
-    return
+        if pilihan == "1":
+
+            jumlah = int(input("\nMasukkan jumlah target yang ingin ditambahkan: "))
+
+            for i in range(jumlah):
+                target = input(f"Target ke-{i+1}: ")
+                targets.append(target)
+
+            users[username]["target_harian"][tanggal] = targets
+            save_users(users)
+
+            print("\nTarget berhasil disimpan!")
+
+        elif pilihan == "2":
+
+            if len(targets) == 0:
+                print("Belum ada target yang bisa dihapus.")
+                continue
+
+            nomor = int(input("Masukkan nomor target yang ingin dihapus: "))
+
+            if 1 <= nomor <= len(targets):
+                target_dihapus = targets.pop(nomor - 1)
+                users[username]["target_harian"][tanggal] = targets
+                save_users(users)
+                print(f"Target '{target_dihapus}' berhasil dihapus.")
+            else:
+                print("Nomor target tidak valid.")
+
+        elif pilihan == "3":
+            return
+
+        else:
+            print("Pilihan tidak valid.")
 
 
 if __name__ == "__main__":
-    target_harian("User", [])
+    users = {
+        "User": {}
+    }
+
+    target_harian("User", users)
