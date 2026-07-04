@@ -1,7 +1,15 @@
 def mission(username, users):
         print ("Maaf, untuk saat ini level hanya tersedia dari level 1 sampai level 5.")
-        print ("Klik enter untuk kembali ke menu utama.")
-        Pilihan_level = input("Level berapa kamu? (1-5): ")
+        current_level = users[username].get("level", 1)
+
+        while True:
+            Pilihan_level = input("Level berapa kamu? (1-5): ").strip()
+
+            if Pilihan_level in ["1", "2", "3", "4", "5"] and int(Pilihan_level) <= current_level:
+                break
+
+            print(f"Kamu belum bisa memilih level itu. Level maksimal kamu sekarang adalah {current_level}.")
+
         print(f"Kamu memilih level {Pilihan_level}. Semangat menjalankan misinya, ganbatte!")
 
         if Pilihan_level == "1":

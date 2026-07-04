@@ -1,5 +1,6 @@
-import sqlite3
+import json
 import os
+import sqlite3
 DB_PATH = os.path.join(os.path.dirname(__file__), "users.db")
 
 def init_database():
@@ -13,6 +14,7 @@ def init_database():
             password TEXT NOT NULL,
             bio TEXT DEFAULT '',
             tanggal_lahir TEXT DEFAULT '',
+            target_harian TEXT DEFAULT '[]',
             xp INTEGER DEFAULT 0,
             level INTEGER DEFAULT 1
         )
@@ -20,6 +22,8 @@ def init_database():
     
     cursor.execute("PRAGMA table_info(users)")
     existing_columns = [row[1] for row in cursor.fetchall()]
+    if "target_harian" not in existing_columns:
+        cursor.execute("ALTER TABLE users ADD COLUMN target_harian TEXT DEFAULT '[]'")
     if "xp" not in existing_columns:
         cursor.execute("ALTER TABLE users ADD COLUMN xp INTEGER DEFAULT 0")
     if "level" not in existing_columns:
@@ -29,9 +33,9 @@ def init_database():
     cursor.execute("SELECT COUNT(*) FROM users")
     if cursor.fetchone()[0] == 0:
         cursor.execute("""
-            INSERT INTO users (username, password, bio, tanggal_lahir, xp, level)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, ('y', 'y', '', '', 0, 1))
+            INSERT INTO users (username, password, bio, tanggal_lahir, target_harian, xp, level)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, ('y', 'y', '', '', '[]', 0, 1))
     
     conn.commit()
     conn.close()
@@ -51,14 +55,25 @@ def load_users():
         # Convert to dict format: {username: {password, bio, tanggal_lahir, xp, level}}
         users = {}
         for row in rows:
+            target_harian_raw = row['target_harian'] if 'target_harian' in row.keys() else '[]'
+            if target_harian_raw in (None, ''):
+                target_harian = []
+            else:
+                try:
+                    target_harian = json.loads(target_harian_raw)
+                    if not isinstance(target_harian, list):
+                        target_harian = []
+                except (TypeError, json.JSONDecodeError):
+                    target_harian = []
+
             users[row['username']] = {
                 'password': row['password'],
                 'bio': row['bio'],
                 'tanggal_lahir': row['tanggal_lahir'],
+                'target_harian': target_harian,
                 'xp': row['xp'] if row['xp'] is not None else 0,
                 'level': row['level'] if row['level'] is not None else 1
             }
-
         return users
     finally:
         conn.close()
@@ -76,14 +91,19 @@ def save_users(users):
         
         # Insert new users
         for username, data in users.items():
+            target_harian = data.get('target_harian', [])
+            if not isinstance(target_harian, list):
+                target_harian = []
+
             cursor.execute("""
-                INSERT INTO users (username, password, bio, tanggal_lahir, xp, level)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO users (username, password, bio, tanggal_lahir, target_harian, xp, level)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
                 username,
                 data.get('password', ''),
                 data.get('bio', ''),
                 data.get('tanggal_lahir', ''),
+                json.dumps(target_harian),
                 data.get('xp', 0),
                 data.get('level', 1)
             ))
