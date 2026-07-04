@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS users (
     tanggal_lahir TEXT DEFAULT '',
     lihat_xp TEXT DEFAULT '',
     lihat_level TEXT DEFAULT ''
+    target_harian TEXT DEFAULT '',
 );
 
 -- Insert existing data from users.json
