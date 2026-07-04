@@ -1,5 +1,6 @@
 def mission(username, users):
         print ("Maaf, untuk saat ini level hanya tersedia dari level 1 sampai level 5.")
+        print ("Klik enter untuk kembali ke menu utama.")
         Pilihan_level = input("Level berapa kamu? (1-5): ")
         print(f"Kamu memilih level {Pilihan_level}. Semangat menjalankan misinya, ganbatte!")
 
