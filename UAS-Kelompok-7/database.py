@@ -15,6 +15,7 @@ def init_database():
             tanggal_lahir TEXT DEFAULT '',
             xp INTEGER DEFAULT 0,
             level INTEGER DEFAULT 1
+            target_harian TEXT DEFAULT 0
         )
     """)
     
@@ -29,9 +30,9 @@ def init_database():
     cursor.execute("SELECT COUNT(*) FROM users")
     if cursor.fetchone()[0] == 0:
         cursor.execute("""
-            INSERT INTO users (username, password, bio, tanggal_lahir, xp, level)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, ('y', 'y', '', '', 0, 1))
+            INSERT INTO users (username, password, bio, tanggal_lahir, xp, level, target_harian)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, ('y', 'y', '', '', 0, 1, ''))
     
     conn.commit()
     conn.close()
@@ -76,15 +77,16 @@ def save_users(users):
         # Insert new users
         for username, data in users.items():
             cursor.execute("""
-                INSERT INTO users (username, password, bio, tanggal_lahir, xp, level)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO users (username, password, bio, tanggal_lahir, xp, level, target_harian)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (
                 username,
                 data.get('password', ''),
                 data.get('bio', ''),
                 data.get('tanggal_lahir', ''),
                 data.get('xp', 0),
-                data.get('level', 1)
+                data.get('level', 1),
+                data.get('target_harian', '')
             ))
         
         conn.commit()
