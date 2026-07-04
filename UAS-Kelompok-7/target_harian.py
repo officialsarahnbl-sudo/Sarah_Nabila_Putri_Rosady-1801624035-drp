@@ -46,13 +46,6 @@ def target_harian(username, users):
         print(f"Target : {targets[i]['Target']}")
         print()
 
-    after_target = input("Apakah kamu berhasil menjalankan targetmu hari ini? (ya/tidak): ")
-
-    if after_target.lower() == "ya":
-        print("Selamat, kamu berhasil menjalankan targetmu hari ini‼")
-    else:
-        print("Jangan menyerah, coba lagi besok‼")
-
     input("\nTekan Enter untuk kembali ke menu...")
     return
 
