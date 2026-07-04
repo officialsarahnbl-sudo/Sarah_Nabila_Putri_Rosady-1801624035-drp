@@ -4,14 +4,11 @@ CREATE TABLE IF NOT EXISTS users (
     password TEXT NOT NULL,
     bio TEXT DEFAULT '',
     tanggal_lahir TEXT DEFAULT '',
-<<<<<<< HEAD
     target_harian TEXT DEFAULT '[]',
     xp INTEGER DEFAULT 0,
     level INTEGER DEFAULT 1
-=======
     lihat_xp TEXT DEFAULT '',
     lihat_level TEXT DEFAULT ''
->>>>>>> 6a850af7d7de76fe6159cee6f131bfd99a14bc80
 );
 
 

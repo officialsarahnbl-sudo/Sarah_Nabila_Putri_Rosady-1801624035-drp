@@ -9,29 +9,14 @@ def your_profile(user_login, users):
         print("Bio            :", users[user_login]["bio"])
         print("Ulang Tahun  :", users[user_login]["tanggal_lahir"])
 
-        print("\n1. Ganti Username")
-        print("2. Ganti Password")
-        print("3. Isi/Edit Bio")
-        print("4. Isi/Edit Ulang Tahun")
-        print("5. Kembali")
+        print("\n1. Ganti Password")
+        print("2. Isi/Edit Bio")
+        print("3. Isi/Edit Ulang Tahun")
+        print("4. Kembali")
 
         pilih = input("Pilih: ")
 
         if pilih == "1":
-            username_baru = input("Username baru: ")
-
-            if username_baru in users:
-                print("Username sudah digunakan!")
-            else:
-                users[username_baru] = users[user_login]
-                del users[user_login]
-
-                user_login = username_baru
-
-                print("Username berhasil diubah!")
-                save_users(users)
-
-        elif pilih == "2":
             password_lama = input("Password lama: ")
 
             if password_lama == users[user_login]["password"]:
@@ -42,7 +27,7 @@ def your_profile(user_login, users):
             else:
                 print("Password lama salah!")
 
-        elif pilih == "3":
+        elif pilih == "2":
             bio_baru = input("Masukkan bio (maks 200 karakter): ")
 
             if len(bio_baru) <= 200:
@@ -52,13 +37,13 @@ def your_profile(user_login, users):
             else:
                 print("Bio terlalu panjang!")
 
-        elif pilih == "4":
+        elif pilih == "3":
             tanggal = input("Masukkan tanggal lahir (DD/MM/YYYY): ")
             users[user_login]["tanggal_lahir"] = tanggal
             print("Tanggal lahir berhasil disimpan!")
             save_users(users)
 
-        elif pilih == "5":
+        elif pilih == "4":
             break
 
         else:

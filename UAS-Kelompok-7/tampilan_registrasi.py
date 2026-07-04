@@ -14,7 +14,8 @@ def sign_up():
     
     users[username] = { 
         "password": password, "bio": "",
-        "tanggal_lahir": "" }
+        "tanggal_lahir": "",
+        "target_harian": [] }
     
     print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan ya.") 
     save_users(users)
