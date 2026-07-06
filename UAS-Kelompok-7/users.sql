@@ -7,8 +7,6 @@ CREATE TABLE IF NOT EXISTS users (
     target_harian TEXT DEFAULT '[]',
     xp INTEGER DEFAULT 0,
     level INTEGER DEFAULT 1
-    lihat_xp TEXT DEFAULT '',
-    lihat_level TEXT DEFAULT ''
 );
 
 

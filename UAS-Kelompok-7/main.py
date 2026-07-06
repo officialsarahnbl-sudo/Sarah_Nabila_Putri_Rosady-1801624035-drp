@@ -1,4 +1,5 @@
-from tampilan_registrasi import sign_up, sign_in, regist
+from tampilan_registrasi import sign_up, sign_in, regist, users
+from komputasi import tampilkan_komputasi
 from pengaturan_profile import your_profile
 from tampilan_level import lihat_xp, lihat_level
 from tampilan_level import tambah_xp
@@ -11,6 +12,7 @@ def header():
 
 def main():
     header()
+    tampilkan_komputasi (users)
 
     while True:
         regist()
