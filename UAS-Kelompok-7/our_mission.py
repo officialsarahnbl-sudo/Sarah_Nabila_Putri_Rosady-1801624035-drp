@@ -25,11 +25,12 @@ def mission(username, users):
 
 def level_1(username, users):
     print("\n=== MISSION LEVEL 1===")
+    print ("\n |Klik enter jika ingin kembali ke display menu|")
     print("Durasi 5 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 1L/hari", "xp": 10},
-        {"misi": "Memberikan afirmasi positif setiap bangun tidur terhadap diri sendiri", "xp": 5},
+        {"misi": "Minum air mineral 1L/hari", "xp": 17},
+        {"misi": "Memberikan afirmasi positif setiap bangun tidur terhadap diri sendiri", "xp": 10},
         {"misi": "Jalan kaki 1000 langkah", "xp": 15}
         ]
 
@@ -54,6 +55,7 @@ def level_1(username, users):
 
 def level_2(username, users):
     print("\n=== MISSION LEVEL 2===")
+    print ("\n |Klik enter jika ingin kembali ke display menu|")
     print("Durasi 7 hari")
 
     misi  = [
@@ -88,10 +90,11 @@ def level_2(username, users):
 
 def level_3(username, users):
     print("\n=== MISSION LEVEL 3===")
+    print ("\n |Klik enter jika ingin kembali ke display menu|")
     print("Durasi 14 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 2L/hari", "xp": 10},
+        {"misi": "Minum air mineral 2L/hari", "xp": 5},
         {"misi": "Menuliskan afirmasi positif setiap terhadap diri sendiri/hari", "xp": 10},
         {"misi": "Jalan kaki 3000 langkah/hari", "xp": 18},
         {"misi": "Makan satu buah/hari", "xp": 5},
@@ -123,16 +126,17 @@ def level_3(username, users):
         
 def level_4(username, users):
     print("\n=== MISSION LEVEL 4===")
+    print ("\n |Klik enter jika ingin kembali ke display menu|")
     print("Durasi 21 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 2L/hari", "xp": 10},
-        {"misi": "Menuliskan 2 afirmasi positif setiap terhadap diri sendiri/hari", "xp": 12},
+        {"misi": "Minum air mineral 2L/hari", "xp": 5},
+        {"misi": "Menuliskan 2 afirmasi positif setiap terhadap diri sendiri/hari", "xp": 10},
         {"misi": "Jalan kaki 4000 langkah/hari", "xp": 20},
-        {"misi": "Makan dua buah/hari", "xp": 10},
-        {"misi": "Baca satu jurnal dan review setiap hari", "xp": 10},
-        {"misi": "Dua kali senam irama", "xp": 16},
-        {"misi": "Push up 10x/hari", "xp": 10}
+        {"misi": "Makan dua buah/hari", "xp": 5},
+        {"misi": "Baca satu jurnal dan review setiap hari", "xp": 5},
+        {"misi": "Dua kali senam irama", "xp": 5},
+        {"misi": "Push up 10x/hari", "xp": 3}
         ]
 
     for tugas in misi:
@@ -159,16 +163,17 @@ def level_4(username, users):
         
 def level_5(username, users):
     print("\n=== MISSION LEVEL 5===")
+    print ("\n |Klik enter jika ingin kembali ke display menu|")
     print("Durasi 28 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 2L/hari", "xp": 10},
-        {"misi": "Menuliskan 3 afirmasi positif setiap terhadap diri sendiri/hari", "xp": 15},
+        {"misi": "Minum air mineral 2L/hari", "xp": 5},
+        {"misi": "Menuliskan 3 afirmasi positif setiap terhadap diri sendiri/hari", "xp": 10},
         {"misi": "Jalan kaki 5000 langkah/hari", "xp": 22},
-        {"misi": "Makan tiga buah/hari", "xp": 10},
-        {"misi": "Baca dua jurnal dan review setiap hari", "xp": 15},
-        {"misi": "Dua kali senam irama", "xp": 16},
-        {"misi": "Push up 15x/hari", "xp": 12}
+        {"misi": "Makan tiga buah/hari", "xp": 5},
+        {"misi": "Baca dua jurnal dan review setiap hari", "xp": 7},
+        {"misi": "Dua kali senam irama", "xp": 5},
+        {"misi": "Push up 15x/hari", "xp": 5}
         ]
 
     for tugas in misi:
