@@ -3,6 +3,7 @@ import os
 import sqlite3
 DB_PATH = os.path.join(os.path.dirname(__file__), "users.db")
 
+# CRUD: CREATE (schema/database setup)
 def init_database():
     """Initialize database with schema if not exists"""
     conn = sqlite3.connect(DB_PATH)
@@ -41,7 +42,7 @@ def init_database():
     conn.commit()
     conn.close()
 
-# READ
+# CRUD: READ
 def load_users():
     """Load all users from database and return as dict"""
     init_database()
@@ -79,7 +80,7 @@ def load_users():
     finally:
         conn.close()
 
-# CREATE / UPDATE
+# CRUD: CREATE / UPDATE / DELETE
 def save_users(users):
     """Save users dict to database"""
     init_database()

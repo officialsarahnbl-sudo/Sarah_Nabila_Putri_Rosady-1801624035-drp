@@ -1,18 +1,20 @@
 from database import save_users
 
-# READ
+# CRUD: READ
 def lihat_xp(username, users):
     xp = users[username].get("xp", 0)
     print(f"\nXP Saat Ini : {xp}")
+    # CRUD: READ data XP dari memori dan simpan ulang ke database
     save_users(users)
 
-# READ
+# CRUD: READ
 def lihat_level(username, users):
     level = users[username].get("level", 1)
     print(f"\nLevel Saat Ini : {level}")
+    # CRUD: READ data level dari memori dan simpan ulang ke database
     save_users(users)
 
-# UPDATE
+# CRUD: UPDATE
 def tambah_xp(username, users, jumlah_xp):
 
     # Ambil data lama
@@ -44,7 +46,7 @@ def tambah_xp(username, users, jumlah_xp):
 
         users[username]["level"] = level_baru
 
-        # Reward hanya di Level 2 dan Level 5
+        # Reward hanya di Level 3 dan Level 5
         if level_baru in [3, 5]:
 
             users[username]["koin"] += 1

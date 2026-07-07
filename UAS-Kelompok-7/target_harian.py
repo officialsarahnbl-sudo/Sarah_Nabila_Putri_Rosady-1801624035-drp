@@ -1,7 +1,7 @@
 from datetime import datetime
 from database import save_users
 
-
+# CRUD: CREATE / READ / DELETE
 def target_harian(username, users):
     if "target_harian" not in users[username] or not isinstance(users[username]["target_harian"], list):
         users[username]["target_harian"] = []
@@ -46,6 +46,7 @@ def target_harian(username, users):
                     "tanggal_input": tanggal_input,
                 })
 
+            # CRUD: CREATE target harian ke database
             save_users(users)
             print("Target berhasil disimpan!")
 
@@ -62,6 +63,7 @@ def target_harian(username, users):
 
             if 1 <= nomor <= len(targets):
                 target_dihapus = targets.pop(nomor - 1)
+                # CRUD: DELETE target harian dari database
                 save_users(users)
                 if isinstance(target_dihapus, dict):
                     print(f"Target '{target_dihapus.get('target', '')}' berhasil dihapus.")

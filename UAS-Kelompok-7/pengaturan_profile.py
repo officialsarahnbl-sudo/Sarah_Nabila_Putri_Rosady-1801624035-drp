@@ -1,6 +1,6 @@
 from database import save_users
 
-# READ / UPDATE
+# CRUD: READ / UPDATE
 def your_profile(user_login, users):
 
     while True:
@@ -23,6 +23,7 @@ def your_profile(user_login, users):
                 password_baru = input("Password baru: ")
                 users[user_login]["password"] = password_baru
                 print("Password berhasil diubah!")
+                # CRUD: UPDATE password ke database
                 save_users(users)
             else:
                 print("Password lama salah!")
@@ -33,6 +34,7 @@ def your_profile(user_login, users):
             if len(bio_baru) <= 200:
                 users[user_login]["bio"] = bio_baru
                 print("Bio berhasil disimpan!")
+                # CRUD: UPDATE bio ke database
                 save_users(users)
             else:
                 print("Bio terlalu panjang!")
@@ -41,6 +43,7 @@ def your_profile(user_login, users):
             tanggal = input("Masukkan tanggal lahir (DD/MM/YYYY): ")
             users[user_login]["tanggal_lahir"] = tanggal
             print("Tanggal lahir berhasil disimpan!")
+            # CRUD: UPDATE tanggal lahir ke database
             save_users(users)
 
         elif pilih == "4":

@@ -3,7 +3,7 @@ from database import load_users, save_users
 
 users = {} 
 users = load_users() 
-# CREATE
+# CRUD: CREATE
 def sign_up(): 
     username = input("Username: ").strip() 
     password = input("Password: ").strip() 
@@ -18,9 +18,10 @@ def sign_up():
         "target_harian": [] }
     
     print("Yay, pendaftaran berhasil! Silakan sign in untuk melanjutkan ya.") 
+    # CRUD: CREATE akun baru ke database
     save_users(users)
     
-# READ
+# CRUD: READ
 def sign_in(): 
     print("\n=== Sign In ===") 
     
@@ -28,6 +29,7 @@ def sign_in():
     password = input("Password: ").strip() 
     if username in users and users[username]["password"] == password: 
         print("Sign in berhasil!") 
+        # CRUD: READ akun dari memori
         return username 
     print("Username atau password salah!") 
     return None 
