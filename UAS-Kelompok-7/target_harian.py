@@ -28,7 +28,7 @@ def target_harian(username, users):
         print("2. Hapus Target")
         print("3. Kembali")
 
-        pilihan = input("Pilih menu: ").strip()
+        pilihan = input("Pilih menu: (Contoh: 1) ").strip()
 
         if pilihan == "1":
             try:

@@ -29,7 +29,7 @@ def tambah_xp(username, users, jumlah_xp):
     xp = users[username]["xp"]
 
     # Hitung level baru
-    level_baru = (xp // 42) + 1
+    level_baru = (xp // 60) + 1
 
     # Maksimal naik satu level setiap menyelesaikan misi
     if level_baru > level_lama + 1:
@@ -45,7 +45,7 @@ def tambah_xp(username, users, jumlah_xp):
         users[username]["level"] = level_baru
 
         # Reward hanya di Level 2 dan Level 5
-        if level_baru in [2, 5]:
+        if level_baru in [3, 5]:
 
             users[username]["koin"] += 1
 

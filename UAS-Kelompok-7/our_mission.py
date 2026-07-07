@@ -1,9 +1,9 @@
 def mission(username, users):
-        print ("Maaf, untuk saat ini level hanya tersedia dari level 1 sampai level 5.")
+        print ("\nMaaf, untuk saat ini level hanya tersedia dari level 1 sampai level 5.")
         current_level = users[username].get("level", 1)
 
         while True:
-            Pilihan_level = input("Level berapa kamu? (1-5): ").strip()
+            Pilihan_level = input("\nLevel berapa kamu? (1-5): ").strip()
 
             if Pilihan_level in ["1", "2", "3", "4", "5"] and int(Pilihan_level) <= current_level:
                 break
@@ -26,17 +26,17 @@ def mission(username, users):
 def level_1(username, users):
     print("\n=== MISSION LEVEL 1===")
     print ("\n |Klik enter jika ingin kembali ke display menu|")
-    print("Durasi 5 hari")
+    print("\nDurasi 5 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 1L/hari", "xp": 17},
-        {"misi": "Memberikan afirmasi positif setiap bangun tidur terhadap diri sendiri", "xp": 10},
-        {"misi": "Jalan kaki 1000 langkah", "xp": 15}
+        {"misi": "Minum air mineral 1L/hari", "xp": 20},
+        {"misi": "Memberikan afirmasi positif setiap bangun tidur terhadap diri sendiri", "xp": 20},
+        {"misi": "Jalan kaki 1000 langkah", "xp": 20}
         ]
 
     for tugas in misi:
         print(f"\nMisi: {tugas['misi']}")
-        print(f"XP yang didapat: {tugas['xp']}")
+        print(f"\nXP yang didapat: {tugas['xp']}")
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
@@ -56,19 +56,19 @@ def level_1(username, users):
 def level_2(username, users):
     print("\n=== MISSION LEVEL 2===")
     print ("\n |Klik enter jika ingin kembali ke display menu|")
-    print("Durasi 7 hari")
+    print("\nDurasi 7 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 1L/hari", "xp": 5},
-        {"misi": "Memberikan afirmasi positif setiap bangun tidur dan sebelum tidur terhadap diri sendiri", "xp": 7},
-        {"misi": "Jalan kaki 2000 langkah", "xp": 15},
+        {"misi": "Minum air mineral 1L/hari", "xp": 10},
+        {"misi": "Memberikan afirmasi positif setiap bangun tidur dan sebelum tidur terhadap diri sendiri", "xp": 10},
+        {"misi": "Jalan kaki 2000 langkah", "xp": 20},
         {"misi": "Detox makanan manis dengan maksimal 50 gram atau 4 sendok makan perhari", "xp": 10},
-        {"misi": "Baca satu jurnal setiap hari", "xp": 5}
+        {"misi": "Baca satu jurnal setiap hari", "xp": 10}
         ]
 
     for tugas in misi:
         print(f"\nMisi: {tugas['misi']}")
-        print(f"XP yang didapat: {tugas['xp']}")
+        print(f"\nXP yang didapat: {tugas['xp']}")
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
@@ -91,20 +91,20 @@ def level_2(username, users):
 def level_3(username, users):
     print("\n=== MISSION LEVEL 3===")
     print ("\n |Klik enter jika ingin kembali ke display menu|")
-    print("Durasi 14 hari")
+    print("\nDurasi 14 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 2L/hari", "xp": 5},
+        {"misi": "Minum air mineral 2L/hari", "xp": 10},
         {"misi": "Menuliskan afirmasi positif setiap terhadap diri sendiri/hari", "xp": 10},
-        {"misi": "Jalan kaki 3000 langkah/hari", "xp": 18},
-        {"misi": "Makan satu buah/hari", "xp": 5},
-        {"misi": "Baca satu jurnal setiap hari", "xp": 5},
-        {"misi": "Satu kali senam irama", "xp": 8}
+        {"misi": "Jalan kaki 3000 langkah/hari", "xp": 20},
+        {"misi": "Makan satu buah/hari", "xp": 10},
+        {"misi": "Baca satu jurnal setiap hari", "xp": 10},
+        {"misi": "Satu kali senam irama", "xp": 5}
         ]
 
     for tugas in misi:
         print(f"\nMisi: {tugas['misi']}")
-        print(f"XP yang didapat: {tugas['xp']}")
+        print(f"\nXP yang didapat: {tugas['xp']}")
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
@@ -126,22 +126,22 @@ def level_3(username, users):
         
 def level_4(username, users):
     print("\n=== MISSION LEVEL 4===")
-    print ("\n |Klik enter jika ingin kembali ke display menu|")
-    print("Durasi 21 hari")
+    print ("\n|Klik enter jika ingin kembali ke display menu|")
+    print("\nDurasi 21 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 2L/hari", "xp": 5},
+        {"misi": "Minum air mineral 2L/hari", "xp": 19},
         {"misi": "Menuliskan 2 afirmasi positif setiap terhadap diri sendiri/hari", "xp": 10},
         {"misi": "Jalan kaki 4000 langkah/hari", "xp": 20},
-        {"misi": "Makan dua buah/hari", "xp": 5},
-        {"misi": "Baca satu jurnal dan review setiap hari", "xp": 5},
-        {"misi": "Dua kali senam irama", "xp": 5},
-        {"misi": "Push up 10x/hari", "xp": 3}
+        {"misi": "Makan dua buah/hari", "xp": 10},
+        {"misi": "Baca satu jurnal dan review setiap hari", "xp": 10},
+        {"misi": "Dua kali senam irama", "xp": 10},
+        {"misi": "Push up 10x/hari", "xp": 10}
         ]
 
     for tugas in misi:
         print(f"\nMisi: {tugas['misi']}")
-        print(f"XP yang didapat: {tugas['xp']}")
+        print(f"\nXP yang didapat: {tugas['xp']}")
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
@@ -163,22 +163,22 @@ def level_4(username, users):
         
 def level_5(username, users):
     print("\n=== MISSION LEVEL 5===")
-    print ("\n |Klik enter jika ingin kembali ke display menu|")
-    print("Durasi 28 hari")
+    print ("\n|Klik enter jika ingin kembali ke display menu|")
+    print("\nDurasi 28 hari")
 
     misi  = [
-        {"misi": "Minum air mineral 2L/hari", "xp": 5},
+        {"misi": "Minum air mineral 2L/hari", "xp": 10},
         {"misi": "Menuliskan 3 afirmasi positif setiap terhadap diri sendiri/hari", "xp": 10},
         {"misi": "Jalan kaki 5000 langkah/hari", "xp": 22},
-        {"misi": "Makan tiga buah/hari", "xp": 5},
-        {"misi": "Baca dua jurnal dan review setiap hari", "xp": 7},
-        {"misi": "Dua kali senam irama", "xp": 5},
-        {"misi": "Push up 15x/hari", "xp": 5}
+        {"misi": "Makan tiga buah/hari", "xp": 10},
+        {"misi": "Baca dua jurnal dan review setiap hari", "xp": 10},
+        {"misi": "Dua kali senam irama", "xp": 10},
+        {"misi": "Push up 15x/hari", "xp": 10}
         ]
 
     for tugas in misi:
         print(f"\nMisi: {tugas['misi']}")
-        print(f"XP yang didapat: {tugas['xp']}")
+        print(f"\nXP yang didapat: {tugas['xp']}")
 
     jawaban = input("\nApakah kamu berhasil menjalankannya sesuai rentang waktu yang ditentukan? (ya/tidak): ")
 
