@@ -77,7 +77,3 @@ def target_harian(username, users):
 
         else:
             print("Pilihan tidak valid.")
-
-
-if __name__ == "__main__":
-    target_harian("User", {"User": {"target_harian": []}})
